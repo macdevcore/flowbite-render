@@ -1,7 +1,7 @@
 ---
 import { url } from '../lib/data.js';
 import { createClient } from '@supabase/supabase-js';
-
+const calcs = await Astro.glob('../pages/calc/data/*.md');
 
 interface Props {
 	id: number;
@@ -14,12 +14,7 @@ interface Props {
 }
 
 const { id, prop1, prop2, prop3, prop4, check1 = false, text } = Astro.props;
-
-if (id === 1){
-	import * as calcData from '../pages/calc/data/calc1.md';
-}else if (id === 2){
-	import * as calcData from '../pages/calc/data/calc2.md';
-}
+const calcData = calcs[id]
 ---
 
 <div class="px-4 py-6 sm:px-6">
