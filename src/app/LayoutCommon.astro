@@ -92,7 +92,7 @@ const { class: clazz } = Astro.props;
 		try {
 			const { error } = await supabase.from('calc_data')
 			.update({ prop1: calcProp1, prop2: calcProp2, prop3: calcProp3, prop4: calcProp4, check1: calcCheck1 })
-			.eq('user_id', userId).eq('calc', calc);
+			.eq('calc', calc);
 			if (error) { throw error }
     } catch (error) {
       if (error instanceof Error) {}
