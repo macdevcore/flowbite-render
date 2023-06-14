@@ -1,7 +1,7 @@
 /* empty css                         */import { c as createAstro, a as createComponent, r as renderTemplate, f as renderComponent } from '../astro.3e08f6f4.mjs';
 import 'html-escaper';
 import { $ as $$LayoutSidebar } from './404.astro.c59431ee.mjs';
-import { $ as $$CalcContent } from './calculator1.astro.d1a4cfc6.mjs';
+import { $ as $$CalcContent } from './calculator1.astro.a79797ff.mjs';
 import { createClient } from '@supabase/supabase-js';
 /* empty css                         *//* empty css                                 */
 const $$Astro = createAstro("http://localhost:2121");
