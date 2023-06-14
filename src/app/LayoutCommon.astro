@@ -90,7 +90,7 @@ const { class: clazz } = Astro.props;
 		let calcProp4 = document.getElementById("prop-4").value;
 		let calcCheck1 = (document.getElementById('check-1').checked) ? true : false;
 		try {
-			const { error } = await supabase.from('Calculator')
+			const { error } = await supabase.from('calc_data')
 			.update({ prop1: calcProp1, prop2: calcProp2, prop3: calcProp3, prop4: calcProp4, check1: calcCheck1 })
 			.eq('user_id', userId).eq('calc', calc);
 			if (error) { throw error }
