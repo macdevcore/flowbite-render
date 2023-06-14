@@ -1,4 +1,5 @@
 ---
+id: 1
 title: 'Rechner 1'
 link: 'calc/calculator1'
 icon: 'heart'
