@@ -105,13 +105,12 @@ const $$Calculator1 = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Calculator1;
   const calcId = 1;
-  const userId = "74469a5bd-e480-483f-bdec-0563ff6267c9";
   const supabaseUrl = "https://mhzckigyfxwlxlpunqez.supabase.co";
   const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oemNraWd5Znh3bHhscHVucWV6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4Njc3MzI2NywiZXhwIjoyMDAyMzQ5MjY3fQ.u2pqT88t8MekfEeAnErVRuCsq7dzAPtA1TJgr8DiBq4";
   const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     global: { fetch: fetch.bind(globalThis) }
   });
-  const { data, error } = await supabase.from("calc_data").select("prop1, prop2, prop3, prop4, check1, text1").eq("account_id", userId).eq("calc", calcId).limit(1).single();
+  const { data, error } = await supabase.from("calc_data").select("prop1, prop2, prop3, prop4, check1, text1").eq("calc", calcId).limit(1).single();
   return renderTemplate`${renderComponent($$result, "LayoutSidebar", $$LayoutSidebar, {}, { "default": ($$result2) => renderTemplate`
 	${renderComponent($$result2, "CalcContent", $$CalcContent, { "id": calcId, "prop1": data.prop1, "prop2": data.prop2, "prop3": data.prop3, "prop4": data.prop4, "check1": data.check1, "text": data.text1 })}
 ` })}`;
