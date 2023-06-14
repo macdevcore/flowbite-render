@@ -78,7 +78,7 @@ const { class: clazz } = Astro.props;
 	const { data, error } = await supabase
   .from('Calculator1')
   .select('prop1, prop2')
-  .eq('user_id', userId);
+  .eq('user_id', userId).limit(1).single();
 	console.log('prop1: ', data.prop1);
 
 </script>
