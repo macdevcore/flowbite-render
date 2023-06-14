@@ -1,0 +1,203 @@
+---
+/* eslint max-lines: 'off' */
+
+import { url } from '../lib/data.js';
+---
+
+<!-- TODO: Dynamic dropdowns -->
+<aside
+	id="sidebar"
+	class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width transition-all"
+	aria-label="Sidebar"
+>
+	<div
+		class="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+	>
+		<div
+			class:list={[
+				'flex flex-col flex-1 pt-5 pb-28 overflow-y-auto',
+				'scrollbar scrollbar-w-2 scrollbar-thumb-rounded-[0.1667rem]',
+				'scrollbar-thumb-slate-200 scrollbar-track-gray-400',
+				'dark:scrollbar-thumb-slate-900 dark:scrollbar-track-gray-800',
+			]}
+		>
+			<div
+				class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700"
+			>
+				<ul class="pb-2 space-y-2">
+					<li>
+						<a
+							href={url('dashboard')}
+							class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
+						>
+							<svg
+								class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+								><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path
+									d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg
+							>
+							<span class="ml-3" sidebar-toggle-item>Dashboard</span>
+						</a>
+					</li>
+					<li>
+						<button
+							type="button"
+							class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+							aria-controls="dropdown-calc" aria-expanded="true"
+							data-collapse-toggle="dropdown-calc"
+						>
+						<svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+						fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z"></path>
+						</svg>
+							<span
+								class="flex-1 ml-3 text-left whitespace-nowrap"
+								sidebar-toggle-item>Rechner</span
+							>
+							<svg
+								sidebar-toggle-item
+								class="w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+								><path
+									fill-rule="evenodd"
+									d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+									clip-rule="evenodd"></path></svg
+							>
+						</button>
+						<ul id="dropdown-calc" class="space-y-2 py-2">
+							<li>
+								<a
+									href={url('calc/calculator1')}
+									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
+									>Rechner 1</a
+								>
+							</li>
+							<li>
+								<a
+									href={url('calc/calculator2')}
+									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
+									>Rechner 2</a
+								>
+							</li>
+							<li>
+								<a
+									href={url('calc/calculator3')}
+									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
+									>Rechner 3</a
+								>
+							</li>
+							<li>
+								<a
+									href={url('calc/calculator4')}
+									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
+									>Rechner 4</a
+								>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="pt-2 space-y-2">
+					<a
+						href={url('settings')}
+						class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700"
+					>
+						<svg
+							class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+						>
+							<path
+								clip-rule="evenodd"
+								fill-rule="evenodd"
+								d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+							></path>
+						</svg>
+						<span class="ml-3" sidebar-toggle-item>Settings</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="absolute bottom-0 left-0 justify-center p-4 w-full bg-white dark:bg-gray-800 z-20">
+      <p class="text-sm text-gray-500 dark:text-gray-400">Berechnungen</p>
+      <div class="font-medium text-gray-900 dark:text-white">5 von 12</div>
+      <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 mb-4 dark:bg-gray-700">
+          <div class="bg-teal-500 h-2.5 rounded-full" style="width: 43%"></div>
+      </div>
+      <a href="#" class="inline-flex items-center justify-center w-full py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+          <svg aria-hidden="true" class="mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+          Upgrade to Pro
+      </a>
+  </div>
+	</div>
+</aside>
+
+<div
+	class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90"
+	id="sidebarBackdrop"
+>
+</div>
+
+<script>
+	const sidebar = document.getElementById('sidebar');
+
+	if (sidebar) {
+		const toggleSidebarMobile = (
+			sidebar: HTMLElement,
+			sidebarBackdrop: HTMLElement,
+			toggleSidebarMobileHamburger: HTMLElement,
+			toggleSidebarMobileClose: HTMLElement,
+		) => {
+			sidebar.classList.toggle('hidden');
+			sidebarBackdrop.classList.toggle('hidden');
+			toggleSidebarMobileHamburger.classList.toggle('hidden');
+			toggleSidebarMobileClose.classList.toggle('hidden');
+		};
+
+		const toggleSidebarMobileEl = document.getElementById(
+			'toggleSidebarMobile',
+		);
+		const sidebarBackdrop = document.getElementById('sidebarBackdrop')!;
+		const toggleSidebarMobileHamburger = document.getElementById(
+			'toggleSidebarMobileHamburger',
+		)!;
+		const toggleSidebarMobileClose = document.getElementById(
+			'toggleSidebarMobileClose',
+		)!;
+		const toggleSidebarMobileSearch = document.getElementById(
+			'toggleSidebarMobileSearch',
+		)!;
+
+		toggleSidebarMobileSearch?.addEventListener('click', () => {
+			toggleSidebarMobile(
+				sidebar,
+				sidebarBackdrop,
+				toggleSidebarMobileHamburger,
+				toggleSidebarMobileClose,
+			);
+		});
+
+		toggleSidebarMobileEl?.addEventListener('click', () => {
+			toggleSidebarMobile(
+				sidebar,
+				sidebarBackdrop,
+				toggleSidebarMobileHamburger,
+				toggleSidebarMobileClose,
+			);
+		});
+
+		sidebarBackdrop?.addEventListener('click', () => {
+			toggleSidebarMobile(
+				sidebar,
+				sidebarBackdrop,
+				toggleSidebarMobileHamburger,
+				toggleSidebarMobileClose,
+			);
+		});
+	}
+</script>
