@@ -84,10 +84,11 @@ const { class: clazz } = Astro.props;
 	}
 
 	const $calcForm: HTMLElement | null = document.querySelector('#calc-form');
-  const $calcBlock: HTMLElement | null = $calcForm.dataset.calc;
-
-  if ($calcForm && $calcBlock) {
-    $calcForm.addEventListener('submit', (e) => saveCalcValues(e, $calcBlock));
+	if ($calcForm) {
+  	const $calcBlock: HTMLElement | null = $calcForm.dataset.calc;
+  	if ($calcBlock) {
+    	$calcForm.addEventListener('submit', (e) => saveCalcValues(e, $calcBlock));
+		}
   }
 </script>
 
