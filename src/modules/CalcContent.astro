@@ -15,10 +15,9 @@ interface Props {
 
 const { id, prop1, prop2, prop3, prop4, check1 = false, text } = Astro.props;
 
-if (Astro.props.id === 1){
+if (id === 1){
 	import * as calcData from '../pages/calc/data/calc1.md';
-}
-if (Astro.props.id === 2){
+}else if (id === 2){
 	import * as calcData from '../pages/calc/data/calc2.md';
 }
 ---
