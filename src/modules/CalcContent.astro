@@ -8,8 +8,9 @@ const { id } = Astro.props;
 
 <div class="px-4 pt-6 sm:px-6">
 	<h1 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
-		{id}
-		{id == "Rechner 2" ? <p>Show me!</p> : <p>Else show me!</p>}
+		{id} {id == "Rechner 3" && <svg class="w-6 h-5 2xl:w-9 2xl:h-8 text-lime-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+		</svg>}
 	</h1>
 	<div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
 		<div
