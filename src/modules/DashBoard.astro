@@ -9,7 +9,7 @@ const posts = await Astro.glob('../pages/calc/data/*.md');
 
 <div class="px-4 pt-6 sm:px-6">
 	<h1 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
-		My Dashboard
+		My Dashboard {calcData.frontmatter.title}
 	</h1>
 	<div class="grid gap-6 lg:grid-cols-2 2xl:grid-cols-3">
 		<!-- Main widget -->
@@ -76,8 +76,6 @@ const posts = await Astro.glob('../pages/calc/data/*.md');
 			<h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
 					Rechner
 			</h5>
-			{calcData.title}
-			{posts.map(post => <li>{post.title}</li>)}
 			<p class="text-sm font-normal text-gray-500 dark:text-gray-400">Hier sind alle verfügbaren Rechner aufgelistet.</p>
 			<ul class="my-4 space-y-4">
 					<li>
