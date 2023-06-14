@@ -64,7 +64,7 @@ const { class: clazz } = Astro.props;
 	import 'flowbite';
 	import { createClient } from '@supabase/supabase-js';
 
-	var userId = '77173b116fde045e661a0cb7ec902919';
+	const userId = '77173b116fde045e661a0cb7ec902919';
 	const supabaseUrl = 'https://anyfrhmfxqicdhttxkij.supabase.co';
 	const supabaseAnonKey =
 		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFueWZyaG1meHFpY2RodHR4a2lqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NjYzNDY3NywiZXhwIjoyMDAyMjEwNjc3fQ.xKmXdHqvIow96RjRvzX1ckYTeVZbjeVPfxkEBtE-8sM';
@@ -76,9 +76,12 @@ const { class: clazz } = Astro.props;
 	async function saveCalcValues(evt, calc){
 		evt.preventDefault();
 		let calcProp1 = document.getElementById("prop-1").value;
-		const { error } = await supabase
-		.from('Calculator')
-		.update({ prop1: calcProp1 })
+		let calcProp2 = document.getElementById("prop-2").value;
+		let calcProp3 = document.getElementById("prop-3").value;
+		let calcProp4 = document.getElementById("prop-4").value;
+		let calcCheck1 = (document.getElementById('check-1').checked) ? true : false;
+		const { error } = await supabase.from('Calculator')
+		.update({ prop1: calcProp1, prop2: calcProp2, prop3: calcProp3, prop4: calcProp4, check1: calcCheck1 })
 		.eq('user_id', userId).eq('calc', calc);
 	}
 
