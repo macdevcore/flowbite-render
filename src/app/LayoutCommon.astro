@@ -130,17 +130,11 @@ const { class: clazz } = Astro.props;
 	});
 
 	async function addSecret(secret, id){
-		try {
-			const { data, error } = await supabase
-			.from('secrets')
-			.insert({ secret: secret, account_id: id })
-			.select();
-			if (error) { throw error }
-    } catch (error) {
-      if (error instanceof Error) {}
-    } finally {
-			console.log('Response after Insert: ', data);
-    }
+		const { data, error } = await supabase
+		.from('secrets')
+		.insert({ secret: secret, account_id: id })
+		.select();
+		console.log('Response after Insert: ', data);
 	}
 	const $calcSecretBtn: HTMLElement | null = document.querySelector('#calc-secret-btn');
 	if ($calcSecretBtn) {
