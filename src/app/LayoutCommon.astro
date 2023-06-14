@@ -105,6 +105,13 @@ const { class: clazz } = Astro.props;
     	$calcForm.addEventListener('submit', (e) => saveCalcValues(e, $calcBlock));
 		}
   }
+
+	window.addEventListener("DOMContentLoaded", (event) => {
+		let $calcFormBtn = document.getElementById("calc-form-btn");
+		if ($calcFormBtn) {
+			$calcFormBtn.removeAttribute("disabled");
+		}
+	});
 </script>
 
 <style is:global>
