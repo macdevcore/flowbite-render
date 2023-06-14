@@ -76,7 +76,7 @@ const { class: clazz } = Astro.props;
 	async function saveCalcValues(evt, calc){
 		evt.preventDefault();
 		let $calcFormBtn = document.getElementById("calc-form-btn");
-		$calcFormBtn.setAttribute("loading", "");
+		$calcFormBtn.setAttribute("loading", "").setAttribute("disabled", "");
 		let calcProp1 = document.getElementById("prop-1").value;
 		let calcProp2 = document.getElementById("prop-2").value;
 		let calcProp3 = document.getElementById("prop-3").value;
@@ -90,7 +90,9 @@ const { class: clazz } = Astro.props;
     } catch (error) {
       if (error instanceof Error) {}
     } finally {
-      $calcFormBtn.removeAttribute("loading");
+			setTimeout(function () {
+				$calcFormBtn.removeAttribute("loading").removeAttribute("disabled");
+			}, 1000);
     }
 	}
 
