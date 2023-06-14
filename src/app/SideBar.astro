@@ -1,7 +1,7 @@
 ---
-/* eslint max-lines: 'off' */
-
 import { url } from '../lib/data.js';
+
+const calcs = await Astro.glob('../pages/calc/data/*.md');
 ---
 
 <!-- TODO: Dynamic dropdowns -->
@@ -69,34 +69,15 @@ import { url } from '../lib/data.js';
 							>
 						</button>
 						<ul id="dropdown-calc" class="space-y-2 py-2">
-							<li>
-								<a
-									href={url('calc/calculator1')}
-									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
-									>Rechner 1</a
-								>
-							</li>
-							<li>
-								<a
-									href={url('calc/calculator2')}
-									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
-									>Rechner 2</a
-								>
-							</li>
-							<li>
-								<a
-									href={url('calc/calculator3')}
-									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
-									>Rechner 3</a
-								>
-							</li>
-							<li>
-								<a
-									href={url('calc/calculator4')}
-									class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
-									>Rechner 4</a
-								>
-							</li>
+							{calcs.map(calc => (
+								<li>
+									<a
+										href={url(calc.frontmatter.link)}
+										class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700"
+										>{calc.frontmatter.title}</a
+									>
+								</li>
+							))}
 						</ul>
 					</li>
 				</ul>
