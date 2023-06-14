@@ -74,7 +74,8 @@ const { class: clazz } = Astro.props;
 	});
 	console.log('Supabase Instance: ', supabase, userId);
 
-	async function saveCalcValues(calc){
+	async function saveCalcValues(evt, calc){
+		evt.preventDefault();
 		let calcProp1 = document.getElementById("prop-1").value;
 		const { error } = await supabase
 		.from('Calculator')
@@ -86,7 +87,7 @@ const { class: clazz } = Astro.props;
   const $calcBlock: HTMLElement | null = $calcForm.dataset.calc;
 
   if ($calcForm && $calcBlock) {
-    $calcForm.addEventListener('submit', () => saveCalcValues($calcBlock));
+    $calcForm.addEventListener('submit', (e) => saveCalcValues(e, $calcBlock));
   }
 </script>
 
