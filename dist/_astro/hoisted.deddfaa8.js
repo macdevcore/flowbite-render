@@ -1,1 +1,0 @@
-import"./hoisted.fe59da7f.js";const e=document.getElementById("calc-form");e.addEventListener?e.addEventListener("submit",function(t){t.preventDefault(),saveCalcValues(e.dataset.calc)},!0):e.attachEvent("onsubmit",function(t){t.preventDefault(),saveCalcValues(e.dataset.calc)});

@@ -45,20 +45,6 @@ const { class: clazz } = Astro.props;
 			} else {
 				document.documentElement.classList.remove('dark');
 			}
-			async function saveCalcValues(calc){
-				let calcProp1 = document.getElementById("prop-1").value;
-				let userId = '77173b116fde045e661a0cb7ec902919';
-				const supabaseUrl = 'https://anyfrhmfxqicdhttxkij.supabase.co';
-				const supabaseAnonKey =
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFueWZyaG1meHFpY2RodHR4a2lqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NjYzNDY3NywiZXhwIjoyMDAyMjEwNjc3fQ.xKmXdHqvIow96RjRvzX1ckYTeVZbjeVPfxkEBtE-8sM';
-				const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-					global: { fetch: fetch.bind(globalThis) }
-				});
-				const { error } = await supabase
-				.from('Calculator')
-				.update({ prop1: calcProp1 })
-				.eq('user_id', userId).eq('calc', calc);
-			}
 		</script>
 	</head>
 	<body
@@ -77,8 +63,6 @@ const { class: clazz } = Astro.props;
 
 <script>
 	import 'flowbite';
-	import 'flowbite/dist/datepicker.js';
-
 	import { createClient } from '@supabase/supabase-js';
 
 	var userId = '77173b116fde045e661a0cb7ec902919';
@@ -90,6 +74,20 @@ const { class: clazz } = Astro.props;
 	});
 	console.log('Supabase Instance: ', supabase, userId);
 
+	async function saveCalcValues(calc){
+		let calcProp1 = document.getElementById("prop-1").value;
+		const { error } = await supabase
+		.from('Calculator')
+		.update({ prop1: calcProp1 })
+		.eq('user_id', userId).eq('calc', calc);
+	}
+
+	const $calcForm: HTMLElement | null = document.querySelector('#calc-form');
+  const $calcBlock: HTMLElement | null = $calcForm.dataset.calc;
+
+  if ($calcForm && $calcBlock) {
+    $calcForm.addEventListener('submit', () => saveCalcValues($calcBlock));
+  }
 </script>
 
 <style is:global>

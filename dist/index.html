@@ -25,22 +25,8 @@
 			} else {
 				document.documentElement.classList.remove('dark');
 			}
-			async function saveCalcValues(calc){
-				let calcProp1 = document.getElementById("prop-1").value;
-				let userId = '77173b116fde045e661a0cb7ec902919';
-				const supabaseUrl = 'https://anyfrhmfxqicdhttxkij.supabase.co';
-				const supabaseAnonKey =
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFueWZyaG1meHFpY2RodHR4a2lqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NjYzNDY3NywiZXhwIjoyMDAyMjEwNjc3fQ.xKmXdHqvIow96RjRvzX1ckYTeVZbjeVPfxkEBtE-8sM';
-				const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-					global: { fetch: fetch.bind(globalThis) }
-				});
-				const { error } = await supabase
-				.from('Calculator')
-				.update({ prop1: calcProp1 })
-				.eq('user_id', userId).eq('calc', calc);
-			}
 		</script>
-	<link rel="stylesheet" href="/_astro/404.7c2fd273.css" /><script type="module" src="/_astro/hoisted.fe59da7f.js"></script></head>
+	<link rel="stylesheet" href="/_astro/404.6bb5fefe.css" /><script type="module" src="/_astro/hoisted.822f0a69.js"></script></head>
 	<body class="astro-53FVB3KY bg-gray-50 dark:bg-gray-800 scrollbar scrollbar-w-3 scrollbar-thumb-rounded-[0.25rem] scrollbar-track-slate-200 scrollbar-thumb-gray-400 dark:scrollbar-track-gray-900 dark:scrollbar-thumb-gray-700">
 		
 	<nav class="fixed z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
