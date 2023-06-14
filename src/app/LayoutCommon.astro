@@ -2,7 +2,7 @@
 import pkg from '../../package.json' assert { type: 'json' };
 import { url } from '../lib/data.js';
 
-import { SITE_TITLE } from './constants.js';
+import { SITE_TITLE, USER_ID } from './constants.js';
 import ImageFavicon32 from '../images/favicon_32.png';
 import ImageFavicon256 from '../images/favicon_256.png';
 
@@ -66,11 +66,18 @@ const { class: clazz } = Astro.props;
 
 	import { createClient } from '@supabase/supabase-js';
 
+	var userId = { USER_ID };
 	const supabaseUrl = 'https://anyfrhmfxqicdhttxkij.supabase.co';
 	const supabaseAnonKey =
 		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFueWZyaG1meHFpY2RodHR4a2lqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NjYzNDY3NywiZXhwIjoyMDAyMjEwNjc3fQ.xKmXdHqvIow96RjRvzX1ckYTeVZbjeVPfxkEBtE-8sM';
 	const supabase = createClient(supabaseUrl, supabaseAnonKey);
-	console.log('Supabase Instance: ', supabase);
+	console.log('Supabase Instance: ', supabase, userId);
+	const { data, error } = await supabase
+  .from('Calculater1')
+  .select('prop1, prop2')
+  .eq('user_id', userId);
+	console.log('prop1: ', data.prop1);
+
 </script>
 
 <style is:global>
