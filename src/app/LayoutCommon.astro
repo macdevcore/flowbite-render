@@ -82,6 +82,11 @@ const { class: clazz } = Astro.props;
 		});
 	}
 
+	const $btnAccountSignin: HTMLElement | null = document.querySelector('#btm-account-signin');
+	if ($btnAccountSignin) {
+		$btnAccountSignin.addEventListener('click', (e) => sendMagicLogin());
+	}
+
 	async function saveCalcValues(evt, calc){
 		evt.preventDefault();
 		let $calcFormBtn = document.getElementById("calc-form-btn");
