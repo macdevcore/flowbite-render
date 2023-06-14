@@ -1,5 +1,6 @@
 ---
 import { url } from '../lib/data.js';
+import * as calcData from '../pages/calc/data/calc1.md';
 
 const circleLeft = ["Insulin", "Kraft", "VO2"];
 const circleRight = ["Herz", "DNA", "Schlaf"];
@@ -74,6 +75,7 @@ const circleRight = ["Herz", "DNA", "Schlaf"];
 			<h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
 					Rechner
 			</h5>
+			{calcData.title}
 			<p class="text-sm font-normal text-gray-500 dark:text-gray-400">Hier sind alle verfügbaren Rechner aufgelistet.</p>
 			<ul class="my-4 space-y-4">
 					<li>
