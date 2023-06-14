@@ -18,6 +18,21 @@ const { data, error } = await supabase
 .eq('user_id', userId)
 .eq('calc', calcId)
 .limit(1).single();
+
+async function saveCalcValues(calc){
+	let calcProp1 = document.getElementById("prop-1").value;
+	let userId = '77173b116fde045e661a0cb7ec902919';
+	const supabaseUrl = 'https://anyfrhmfxqicdhttxkij.supabase.co';
+	const supabaseAnonKey =
+		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFueWZyaG1meHFpY2RodHR4a2lqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NjYzNDY3NywiZXhwIjoyMDAyMjEwNjc3fQ.xKmXdHqvIow96RjRvzX1ckYTeVZbjeVPfxkEBtE-8sM';
+	const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+		global: { fetch: fetch.bind(globalThis) }
+	});
+	const { error } = await supabase
+	.from('Calculator')
+	.update({ prop1: calcProp1 })
+	.eq('user_id', userId).eq('calc', calc);
+}
 ---
 
 <LayoutSidebar>
