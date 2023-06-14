@@ -1,6 +1,8 @@
 ---
 title: 'Rechner 2'
+link: 'calc/calculator2'
 icon: 'cube'
+status: 'pending'
 alert: false
 ---
 
