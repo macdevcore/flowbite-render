@@ -7,22 +7,22 @@ const { status } = Astro.props;
 ---
 
 {status === 'pending' &&
-	<span class="inline-flex items-center bg-gray-200 text-gray-800 text-xs mr-2 px-3 py-1 font-normal rounded-full dark:bg-gray-700 dark:text-gray-300">
-		OFFEN <span class="w-2 h-2 ml-1 bg-gray-500 rounded-full"></span>
+	<span class="inline-flex items-center bg-gray-200 text-gray-800 text-xs px-3 py-1 font-normal rounded-full dark:bg-gray-700 dark:text-gray-300">
+		OFFEN <span class="w-2 h-2 ml-2 bg-gray-500 rounded-full"></span>
 	</span>
 }
 {status === 'risk' &&
-	<span class="inline-flex items-center bg-amber-100 text-amber-800 text-xs mr-2 px-3 py-1 font-normal rounded-full dark:bg-amber-900 dark:text-amber-300">
-		ACHTUNG <span class="w-2 h-2 ml-1 bg-amber-500 rounded-full"></span>
+	<span class="inline-flex items-center bg-amber-100 text-amber-800 text-xs px-3 py-1 font-normal rounded-full dark:bg-amber-900 dark:text-amber-300">
+		ACHTUNG <span class="w-2 h-2 ml-2 bg-amber-500 rounded-full"></span>
 	</span>
 }
 {status === 'success' &&
-	<span class="inline-flex items-center bg-green-100 text-green-800 text-xs mr-2 px-3 py-1 font-normal rounded-full dark:bg-green-900 dark:text-green-300">
-		OPTIMAL <span class="w-2 h-2 ml-1 bg-green-500 rounded-full"></span>
+	<span class="inline-flex items-center bg-green-100 text-green-800 text-xs px-3 py-1 font-normal rounded-full dark:bg-green-900 dark:text-green-300">
+		OPTIMAL <span class="w-2 h-2 ml-2 bg-green-500 rounded-full"></span>
 	</span>
 }
 {status === 'error' &&
-	<span class="inline-flex items-center bg-red-100 text-red-800 text-xs mr-2 px-3 py-1 font-normal rounded-full dark:bg-red-900 dark:text-red-300">
-		KRITISCH <span class="w-2 h-2 ml-1 bg-red-500 rounded-full"></span>
+	<span class="inline-flex items-center bg-red-100 text-red-800 text-xs px-3 py-1 font-normal rounded-full dark:bg-red-900 dark:text-red-300">
+		KRITISCH <span class="w-2 h-2 ml-2 bg-red-500 rounded-full"></span>
 	</span>
 }
