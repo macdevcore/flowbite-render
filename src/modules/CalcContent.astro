@@ -21,7 +21,7 @@ const calcData = calcs[id - 1]
 	<div class="mb-4 flex flex-row justify-between items-end">
 		<div class="basis-auto">
 			<h1 class="text-3xl font-extrabold md:text-5xl lg:text-6xl">
-				<span class="text-transparent bg-clip-text bg-gradient-to-r to-teal-600 from-primary-600 dark:to-grey-600 dark:from-white-600">{calcData.frontmatter.title}</span>
+				<span class="text-transparent bg-clip-text bg-gradient-to-r to-teal-600 from-primary-600 dark:to-gray-300 dark:from-gray-50">{calcData.frontmatter.title}</span>
 			</h1>
 		</div>
 		<div class="basis-auto">
@@ -126,7 +126,12 @@ const calcData = calcs[id - 1]
 		</div>
 		<div
 			class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800"
-		>hgjh</div>
+		>
+		<button id="calc-secret-btn" data-secret={text} data-id={id}>
+			<span>get-secret</span>
+		</button
+	>
+	</div>
 
 	</div>
 	<div class="mt-6 flex w-full rounded-lg shadow-lg justify-between overflow-hidden" role="group">
