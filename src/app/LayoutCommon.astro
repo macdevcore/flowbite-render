@@ -123,8 +123,8 @@ const { class: clazz } = Astro.props;
 
 	async function addSecret(secret, id){
 		const { data, error } = await supabase
-		.from('decrypted_Calculator')
-		.insert({ secret: secret, account_id: id })
+		.from('decrypted_calc_data')
+		.insert({ text1: secret, id: id })
 		.select();
 		console.log('Response after Insert: ', data);
 	}
