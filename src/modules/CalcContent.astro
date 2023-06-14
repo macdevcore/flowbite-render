@@ -15,9 +15,9 @@ interface Props {
 
 const { id, prop1, prop2, prop3, prop4, check1 = false, text } = Astro.props;
 
-
+if (Astro.props.id){
 	import * as calcData from '../pages/calc/data/calc1.md';
-
+}
 ---
 
 <div class="px-4 py-6 sm:px-6">
@@ -39,7 +39,7 @@ const { id, prop1, prop2, prop3, prop4, check1 = false, text } = Astro.props;
 			<div class="text-sm">{calcData.frontmatter.alert}</div>
 		</div>
 	}
-	<div class="grid gap-4 xl:grid-cols-3">
+	<div class="grid gap-6 xl:grid-cols-3">
 		<div
 			class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
@@ -132,7 +132,7 @@ const { id, prop1, prop2, prop3, prop4, check1 = false, text } = Astro.props;
 		>hgjh</div>
 
 	</div>
-	<div class="mt-6 flex w-full rounded-lg shadow-sm justify-between overflow-hidden" role="group">
+	<div class="mt-6 flex w-full rounded-lg shadow-lg justify-between overflow-hidden" role="group">
 		{id != 1 &&
 		<a href={url('calc/calculator1')} class="inline-flex flex-col md:flex-row justify-center items-center w-full px-4 py-2 xl:py-3 text-xs text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600">
 			<svg class="w-4 h-4 mb-2 md:mb-0 md:mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
