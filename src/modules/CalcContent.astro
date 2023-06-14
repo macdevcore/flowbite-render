@@ -1,6 +1,6 @@
 ---
 import { url } from '../lib/data.js';
-import { createClient } from '@supabase/supabase-js';
+
 const calcs = await Astro.glob('../pages/calc/data/*.md');
 
 interface Props {
@@ -21,7 +21,7 @@ const calcData = calcs[id - 1]
 	<div class="mb-4 flex flex-row justify-between items-end">
 		<div class="basis-auto">
 			<h1 class="text-3xl font-extrabold md:text-5xl lg:text-6xl">
-				<span class="text-transparent bg-clip-text bg-gradient-to-r to-teal-600 from-primary-600 dark:to-gray-300 dark:from-gray-50">{calcData.frontmatter.title}</span>
+				<span class="text-transparent bg-clip-text bg-gradient-to-r to-teal-600 from-primary-600 dark:to-gray-500 dark:from-gray-100">{calcData.frontmatter.title}</span>
 			</h1>
 		</div>
 		<div class="basis-auto">
