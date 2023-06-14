@@ -109,7 +109,9 @@ const { class: clazz } = Astro.props;
 	window.addEventListener("DOMContentLoaded", (event) => {
 		let $calcFormBtn = document.getElementById("calc-form-btn");
 		if ($calcFormBtn) {
-			$calcFormBtn.removeAttribute("disabled");
+			setTimeout(function () {
+				$calcFormBtn.removeAttribute("disabled");
+			}, 1000);
 		}
 	});
 </script>
