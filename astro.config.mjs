@@ -22,6 +22,10 @@ export default defineConfig({
 		port: DEV_PORT,
 	},
 
+	markdown: {
+    drafts: true,
+  },
+
 	integrations: [
 		//
 		sitemap(),
