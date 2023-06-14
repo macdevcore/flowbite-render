@@ -1,6 +1,6 @@
 ---
 interface Props {
-	id: string,
+	id: number,
 	prop1: number,
 	prop2: number,
 	prop3: number,
@@ -15,7 +15,7 @@ const { id, prop1, prop2, prop3, prop4, text } = Astro.props;
 	<div class="mb-6 flex flex-row justify-between items-center">
 		<div class="basis-auto">
 			<h1 class="text-base font-semibold text-gray-900 md:text-xl dark:text-white">
-				{id}
+				Rechner {id}
 			</h1>
 		</div>
 		<div class="basis-auto">
@@ -91,7 +91,7 @@ const { id, prop1, prop2, prop3, prop4, text } = Astro.props;
 							required
 						/>
 					</div>
-					{id == "Rechner 3" &&
+					{id == 3 &&
 						<div class="col-span-6 sm:col-span-6">
 							<label for="text1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text-1</label>
 							<textarea id="text1" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>

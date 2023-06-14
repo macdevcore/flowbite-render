@@ -4,6 +4,7 @@ import CalcContent from '../../modules/CalcContent.astro';
 
 import { createClient } from '@supabase/supabase-js';
 
+const calcId = 3;
 var userId = '77173b116fde045e661a0cb7ec902919';
 const supabaseUrl = 'https://anyfrhmfxqicdhttxkij.supabase.co';
 const supabaseAnonKey =
@@ -15,10 +16,8 @@ const { data, error } = await supabase
 .from('Calculator')
 .select('prop1, prop2, prop3, prop4, check1, text')
 .eq('user_id', userId)
-.eq('calc', 3)
+.eq('calc', calcId)
 .limit(1).single();
-
-const calcId = "Rechner 3"
 ---
 
 <LayoutSidebar>
