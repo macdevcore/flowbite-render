@@ -46,7 +46,7 @@ const { class: clazz } = Astro.props;
 			} else {
 				document.documentElement.classList.remove('dark');
 			}
-			{supabase}
+
 		</script>
 	</head>
 	<body
@@ -60,6 +60,7 @@ const { class: clazz } = Astro.props;
 		]}
 	>
 		<slot />
+		{supabase}
 	</body>
 </html>
 
