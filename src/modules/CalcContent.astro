@@ -3,7 +3,7 @@ interface Props {
 	id: string;
 }
 
-const { id } = Astro.props;
+const { id, prop1, prop2 } = Astro.props;
 ---
 
 <div class="px-4 pt-6 sm:px-6">
@@ -30,7 +30,7 @@ const { id } = Astro.props;
 						<input
 							type="number"
 							name="prop-1"
-							id="prop-1"
+							id="prop-1" value={prop1}
 							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 							placeholder="0"
 							required
@@ -45,7 +45,7 @@ const { id } = Astro.props;
 						<input
 							type="number"
 							name="prop-2"
-							id="prop-2"
+							id="prop-2" value={prop2}
 							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 							placeholder="0"
 							required
