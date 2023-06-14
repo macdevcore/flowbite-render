@@ -75,14 +75,23 @@ const { class: clazz } = Astro.props;
 
 	async function saveCalcValues(evt, calc){
 		evt.preventDefault();
+		let $calcFormBtn = document.getElementById("calc-form-btn");
+		$calcFormBtn.setAttribute("loading", "");
 		let calcProp1 = document.getElementById("prop-1").value;
 		let calcProp2 = document.getElementById("prop-2").value;
 		let calcProp3 = document.getElementById("prop-3").value;
 		let calcProp4 = document.getElementById("prop-4").value;
 		let calcCheck1 = (document.getElementById('check-1').checked) ? true : false;
-		const { error } = await supabase.from('Calculator')
-		.update({ prop1: calcProp1, prop2: calcProp2, prop3: calcProp3, prop4: calcProp4, check1: calcCheck1 })
-		.eq('user_id', userId).eq('calc', calc);
+		try {
+			const { error } = await supabase.from('Calculator')
+			.update({ prop1: calcProp1, prop2: calcProp2, prop3: calcProp3, prop4: calcProp4, check1: calcCheck1 })
+			.eq('user_id', userId).eq('calc', calc);
+			if (error) { throw error }
+    } catch (error) {
+      if (error instanceof Error) {}
+    } finally {
+      $calcFormBtn.removeAttribute("loading");
+    }
 	}
 
 	const $calcForm: HTMLElement | null = document.querySelector('#calc-form');
