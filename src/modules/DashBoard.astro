@@ -10,6 +10,12 @@ const posts = await Astro.glob('../pages/calc/data/*.md');
 <div class="px-4 pt-6 sm:px-6">
 	<h1 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
 		My Dashboard {calcData.frontmatter.title}
+
+		<ul>
+			{posts.map(post => <li>{post.frontmatter.title}</li>)}
+			<!-- post.title ist vom Typ `string`! -->
+		</ul>
+
 	</h1>
 	<div class="grid gap-6 lg:grid-cols-2 2xl:grid-cols-3">
 		<!-- Main widget -->
