@@ -172,7 +172,7 @@
 	
 	<div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
 		<div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-3 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-			<form action="#">
+			<form data-calc="3">
 				<div class="grid grid-cols-6 gap-6">
 					<div class="col-span-6 sm:col-span-3">
 						<label for="prop-1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prop-1</label>
@@ -195,7 +195,7 @@
 							<textarea id="text1" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
 						</div>
 					<div class="col-span-6 sm:col-full">
-						<button onclick="saveCalcValues({id});" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">Save all</button>
+						<button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">Save all</button>
 					</div>
 				</div>
 			</form>
@@ -224,6 +224,18 @@
 </div>
 
 <script>
+	const element = document.getElementById("calc-form");
+	if (element.addEventListener) {
+		element.addEventListener("submit", function(evt) {
+			evt.preventDefault();
+			saveCalcValues(element.dataset.calc);
+		}, true);
+	}else {
+		element.attachEvent('onsubmit', function(evt){
+			evt.preventDefault();
+			saveCalcValues(element.dataset.calc);
+		});
+	}
 	async function saveCalcValues(calc){
 		evt.preventDefault();
 		var calcProp1 = document.getElementById("prop-1").value;
