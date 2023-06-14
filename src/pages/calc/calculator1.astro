@@ -20,10 +20,6 @@ const { data, error } = await supabase
 .limit(1).single();
 ---
 
-<LayoutSidebar>
-	<CalcContent id={calcId} prop1={data.prop1} prop2={data.prop2} prop3={data.prop3} prop4={data.prop4} check1={data.check1} text={data.text}/>
-</LayoutSidebar>
-
 <script>
 	async function saveCalcValues(calc){
 		let calcProp1 = document.getElementById("prop-1").value;
@@ -40,3 +36,7 @@ const { data, error } = await supabase
 		.eq('user_id', userId).eq('calc', calc);
 	}
 </script>
+
+<LayoutSidebar>
+	<CalcContent id={calcId} prop1={data.prop1} prop2={data.prop2} prop3={data.prop3} prop4={data.prop4} check1={data.check1} text={data.text}/>
+</LayoutSidebar>
