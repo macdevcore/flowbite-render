@@ -9,46 +9,25 @@ export const SITE_TITLE = 'DevCode Astro App';
 /* Useful flag for sourcing from `./data` entirely, disabling randomize layer */
 export const RANDOMIZE = Boolean(import.meta.env.RANDOMIZE) || true;
 
-// NOTE: Unmapped
-// export const SIDEBAR = [
-// 	{
-// 		title: 'Getting started',
-// 		pages: [
-// 			{ title: 'Introduction' },
-// 			{ title: 'Quickstart' },
-// 			{ title: 'Build tools' },
-// 			{ title: 'License' },
-// 			{ title: 'Changelog' },
-// 		],
-// 	},
-// 	{
-// 		title: 'Customize',
-// 		pages: [
-// 			{ title: 'Configuration' },
-// 			{ title: 'Theming' },
-// 			{ title: 'Color' },
-// 			{ title: 'Icons' },
-// 			{ title: 'Optimization' },
-// 		],
-// 	},
-// 	{
-// 		title: 'Components',
-// 		pages: [
-// 			{ title: 'Alerts' },
-// 			{ title: 'Badge' },
-// 			{ title: 'Breadcrumb' },
-// 			{ title: 'Buttons' },
-// 			{ title: 'Button group' },
-// 			{ title: 'Card' },
-// 			{ title: 'Dropdowns' },
-// 			{ title: 'Forms' },
-// 			{ title: 'Typography' },
-// 			{ title: 'Modal' },
-// 			{ title: 'Navbar' },
-// 			{ title: 'Pagination' },
-// 			{ title: 'Progress' },
-// 			{ title: 'Tables' },
-// 			{ title: 'Tooltips' },
-// 		],
-// 	},
-// ];
+export const CALCULATOR = [
+	{
+		title: 'Rechner 1',
+		icon: 'heart',
+		alert: false
+	},
+	{
+		title: 'Rechner 2',
+		icon: 'cube',
+		alert: false
+	},
+	{
+		title: 'Rechner 3',
+		icon: 'moon',
+		alert: false
+	},
+	{
+		title: 'Rechner 4',
+		icon: 'puzzle',
+		alert: false
+	}
+];
