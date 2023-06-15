@@ -89,7 +89,7 @@ const calcs = await Astro.glob('../pages/calc/data/*.md');
 			<ul class="mt-4 space-y-4 md:mt-6 md:space-y-6">
 				{calcs.map(calc => (
 					<li>
-						<a href={url(calc.frontmatter.link)} class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-100 hover:bg-gray-50 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+						<a href={url(calc.frontmatter.link)} class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-100 hover:bg-gray-50 group hover:shadow dark:bg-gray-400 dark:hover:bg-gray-500 dark:text-white">
 							<SvgIconByName icon={calc.frontmatter.icon} />
 							<span class="flex-1 ml-3 whitespace-nowrap">{calc.frontmatter.title}</span>
 							<BadgeByStatus status={calc.frontmatter.status} />
